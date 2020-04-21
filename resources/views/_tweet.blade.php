@@ -10,8 +10,11 @@
         <a href="{{ route('profile', $tweet->user) }}">
             <h5 class="font-bold mb-4">{{ $tweet->user->name }}</h5>
         </a>
-        <p class="text-sm">
+        <p class="text-sm mb-2">
             {{ $tweet->body }}
         </p>
+
+        <x-like-dislike-buttons :tweet="$tweet"></x-like-dislike-buttons>
     </div>
+
 </div>
