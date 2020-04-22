@@ -2,8 +2,7 @@
     <form method="POST" action="/tweets">
         @csrf
         <textarea name="body" class="w-full"
-                  placeholder="What's up doc?" required autofocus>
-        </textarea>
+                  placeholder="What's up doc?" required autofocus></textarea>
         <hr class="my-4">
         <footer class="flex justify-between items-center">
 

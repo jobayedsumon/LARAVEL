@@ -1,4 +1,4 @@
-<div class="flex p-4 border-b border-b-gray-400">
+<div class="flex p-4 border-b border-b-gray-400 relative">
     <div class="mr-2 flex-shrink-0">
         <a href="{{ route('profile', $tweet->user) }}">
             <img width="50px" height="50px" src="{{ $tweet->user->avatar }}" alt=""
@@ -16,5 +16,16 @@
 
         <x-like-dislike-buttons :tweet="$tweet"></x-like-dislike-buttons>
     </div>
+
+    @if(current_user()->is($tweet->user))
+        <form method="POST" action="/tweets/{{ $tweet->id }}">
+            @csrf
+            @method('DELETE')
+            <input type="hidden" value="{{ $tweet->id }}">
+            <button class="fa fa-remove right-0 absolute"></button>
+        </form>
+
+    @endif
+
 
 </div>

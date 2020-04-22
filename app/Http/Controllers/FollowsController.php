@@ -12,6 +12,6 @@ class FollowsController extends Controller
     {
         auth()->user()->toggleFollow($user);
 
-        return back();
+        return back()->with('message', 'Successful');
     }
 }

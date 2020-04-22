@@ -22,3 +22,10 @@
 </ul>
 
 </div>
+
+@if (session('message'))
+    <div class="absolute bottom-0 text-green-600 font-bold text-md-center">
+        {{ session('message') }}
+    </div>
+@endif
+

@@ -24,6 +24,13 @@ class TweetsController extends Controller
             'body' => $attributes['body']
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message', 'Your tweet has been published!');
+    }
+
+    public function destroy(Tweet $tweet)
+    {
+        $tweet->delete();
+
+        return back()->with('message', 'Your tweet has been deleted!');
     }
 }

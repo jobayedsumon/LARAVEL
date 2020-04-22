@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::middleware('auth')->group(function() {
     Route::post('/tweets', 'TweetsController@store');
+    Route::delete('/tweets/{tweet}', 'TweetsController@destroy');
     Route::get('/tweets', 'TweetsController@index')->name('home');
     Route::get('/explore', 'ExploreController@index');
 });

@@ -15,9 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'username', 'avatar', 'name', 'email', 'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -55,6 +53,11 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         return asset($value ? 'storage/'. $value : 'images/defaultavatar.png');
+    }
+
+    public function getCoverAttribute($value)
+    {
+        return asset($value ? 'storage/'. $value : 'images/defaultcover.png');
     }
 
     public function setPasswordAttribute($value)

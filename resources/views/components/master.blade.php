@@ -39,6 +39,7 @@
 </div>
 
 <script src="http://unpkg.com/turbolinks"></script>
+<script src="{{ asset('js/script.js') }}" type="text/javascript"></script>
 
 </body>
 </html>

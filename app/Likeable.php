@@ -49,5 +49,7 @@ trait Likeable
             [
                 'liked' => $liked
             ]);
+
+        return $this;
     }
 }

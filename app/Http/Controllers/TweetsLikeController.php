@@ -13,6 +13,7 @@ class TweetsLikeController extends Controller
         $tweet->like(current_user());
 
         return back();
+
     }
 
     public function destroy(Tweet $tweet)

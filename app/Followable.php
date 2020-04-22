@@ -4,6 +4,8 @@
 namespace App;
 
 
+use Illuminate\Support\Facades\Session;
+
 trait Followable
 {
 
@@ -16,11 +18,13 @@ trait Followable
     public function follow(User $user)
     {
         $this->follows()->save($user);
+
     }
 
     public function unfollow(User $user)
     {
         $this->follows()->detach($user);
+
     }
 
     public function following(User $user)

@@ -29,11 +29,17 @@ class ProfilesController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user)],
             'avatar' => ['file'],
+            'cover' => ['file'],
+            'description' => ['string'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
         if(\request('avatar')) {
             $attributes['avatar'] = \request('avatar')->store('avatars');
+        }
+
+        if(\request('cover')) {
+            $attributes['cover'] = \request('cover')->store('covers');
         }
 
         $user->update($attributes);

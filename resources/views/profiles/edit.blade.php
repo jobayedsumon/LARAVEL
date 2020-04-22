@@ -70,6 +70,32 @@
             @enderror
         </div>
 
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                   for="cover"
+            >
+                Cover
+            </label>
+
+            <div class="flex">
+                <input class="border border-gray-400 p-2 w-full"
+                       type="file"
+                       name="cover"
+                       id="cover"
+
+                >
+
+                <img src="{{ $user->cover }}"
+                     alt="your cover"
+                     width="40"
+                >
+            </div>
+
+            @error('avatar')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
@@ -87,6 +113,24 @@
             >
 
             @error('email')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                   for="description"
+            >
+                Description
+            </label>
+
+            <textarea class="border border-gray-400 p-2 w-full"
+                   name="description"
+                   id="description"
+
+            >{{ $user->description }}</textarea>
+
+            @error('description')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
