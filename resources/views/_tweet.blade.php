@@ -14,6 +14,10 @@
             {{ $tweet->body }}
         </p>
 
+        @if($tweet->image)
+        <img src="{{ asset('storage/'.$tweet->image) }}" alt="Tweet Image">
+        @endif
+
         <x-like-dislike-buttons :tweet="$tweet"></x-like-dislike-buttons>
     </div>
 
